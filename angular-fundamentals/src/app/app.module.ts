@@ -10,10 +10,8 @@ import { EventsListComponent } from './events/events-list-component';
     EventsListComponent,
     EventThumbnailComponent,
   ],
-  imports: [
-    BrowserModule,
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [EventsAppComponent]
+  bootstrap: [EventsAppComponent],
 })
-export class AppModule { }
+export class AppModule {}
