@@ -1,17 +1,21 @@
-import {Component} from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'events-list',
   template: `
-  <div>
-
-   <h1>Upcoming angular events</h1>
-   <hr>
-   <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
-</div>
-`
+    <div>
+      <h1>Upcoming angular events</h1>
+      <hr />
+      <event-thumbnail
+        #thumbnail
+        [event]="event1"
+      ></event-thumbnail>
+      <h3>{{thumbnail.someProperty}}</h3>
+      <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
+    </div>
+  `,
 })
-export class EventsListComponent{
+export class EventsListComponent {
   event1 = {
     id: 1,
     name: 'Angular connect',
@@ -19,14 +23,10 @@ export class EventsListComponent{
     time: '10:00 am',
     price: 599.99,
     imageUrl: 'assets/images/angularconnect-shield.png',
-    location:{
+    location: {
       address: '1057 DT',
       city: 'London',
-      country: 'England'
-    }
-  }
-
-  handleEventClicked(data: any){
-    console.log('receive:',data)
-  }
+      country: 'England',
+    },
+  };
 }
