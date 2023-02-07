@@ -8,7 +8,7 @@ import { EventsListComponent } from './events/events-list-component';
   declarations: [
     EventsAppComponent,
     EventsListComponent,
-    EventThumbnailComponent
+    EventThumbnailComponent,
   ],
   imports: [
     BrowserModule,
