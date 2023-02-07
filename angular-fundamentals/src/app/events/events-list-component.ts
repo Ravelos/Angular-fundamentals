@@ -4,9 +4,10 @@ import {Component} from '@angular/core'
   selector: 'events-list',
   template: `
   <div>
+
    <h1>Upcoming angular events</h1>
-   <hr/>
-   <event-thumbnail [event]="event1"]></event-thumbnail>
+   <hr>
+   <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"]></event-thumbnail>
 </div>
 `
 })
@@ -23,5 +24,9 @@ export class EventsListComponent{
       city: 'London',
       country: 'England'
     }
+  }
+
+  handleEventClicked(data: any){
+    console.log('receive:',data)
   }
 }
