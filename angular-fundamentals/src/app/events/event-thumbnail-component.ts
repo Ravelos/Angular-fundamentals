@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: 'event-thumbnail',
-  template: './event-thumbnail-component.html'
+  templateUrl: './event-thumbnail-component.html'
 })
 
 export class EventThumbnailComponent {
