@@ -5,6 +5,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './event-thumbnail-component.html',
   styles: [
     `
+      .green {
+        color: #003300 !important ;
+      }
+      .bold {
+        font-weight: bold;
+      }
       .thumbnail {
         min-height: 210px;
       }
@@ -19,4 +25,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class EventThumbnailComponent {
   @Input() event: any;
+
+  getStartTimeClass() {
+    if (this.event && this.event.time === '8:00 am')
+      return ['green', 'bold'];
+      return []
+    }
+
 }
