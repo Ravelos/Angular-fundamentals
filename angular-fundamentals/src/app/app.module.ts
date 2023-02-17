@@ -17,11 +17,12 @@ import { ToastrModule } from 'ngx-toastr';
     NavBarComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    BrowserModule
   ],
-  providers: [EventService,ToastrService],
+  providers: [
+    EventService,
+    ToastrService
+  ],
   bootstrap: [EventsAppComponent],
 })
 export class AppModule {}
