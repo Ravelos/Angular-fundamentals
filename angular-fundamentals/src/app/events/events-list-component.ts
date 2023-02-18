@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from './shared/event.service';
 import { ToastrService } from '../common/toastr.service';
 
-declare let toastr: any
+
 @Component({
   selector: 'events-list',
   template: `
@@ -10,8 +10,7 @@ declare let toastr: any
       <h1>Upcoming angular events</h1>
       <hr />
       <div class="row">
-        <div
-            *ngFor="let event of events" class="col-md-5">
+        <div *ngFor="let event of events" class="col-md-5">
           <event-thumbnail
             (click)="handleThumbnailClick(event?.name)"
             [event]="event"
@@ -21,20 +20,18 @@ declare let toastr: any
     </div>
   `,
 })
-export class EventsListComponent implements OnInit{
-events:any[] | undefined;
-  constructor(
-    private eventService:EventService,
-    private toastrService:ToastrService
-    ){
-  }
+export class EventsListComponent implements OnInit {
+  events: any[] | undefined;
 
-  ngOnInit(){
+  constructor(
+    private eventService: EventService,
+    private toastrService: ToastrService
+  ) {}
+
+  ngOnInit() {
     this.events = this.eventService.getEvents();
   }
-  handleThumbnailClick(eventName: string){
+  handleThumbnailClick(eventName: string) {
     this.toastrService.success(eventName);
   }
 }
-
-
