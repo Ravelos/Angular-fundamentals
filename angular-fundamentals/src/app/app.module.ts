@@ -7,13 +7,15 @@ import { EventsListComponent } from './events/events-list-component';
 import { EventService } from './events/shared/event.service';
 import { NavBarComponent } from './nav/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EventDetailsComponent } from './events/event-details/event-details.component';
 
 @NgModule({
   declarations: [
     EventsAppComponent,
+    EventDetailsComponent,
     EventsListComponent,
     EventThumbnailComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule
