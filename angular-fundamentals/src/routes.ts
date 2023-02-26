@@ -12,7 +12,11 @@ export const appRoutes: Routes = [
     component: CreateEventComponent,
     canDeactivate: ['canDeactivateCreateEvent'],
   },
-  { path: 'events', component: EventsListComponent, resolve: {events: EventsListResolver} },
+  {
+    path: 'events',
+    component: EventsListComponent,
+    resolve: { events: EventsListResolver },
+  },
   {
     path: 'events/:id',
     component: EventDetailsComponent,
