@@ -4,6 +4,7 @@ import { CreateEventComponent } from './app/events/create-event-component/create
 import { EventDetailsComponent } from './app/events/event-details/event-details.component';
 import { EventRouteActivator } from './app/events/event-details/event-route-activator.service';
 import { EventsListComponent } from './app/events/event-list-component/events-list-component';
+import { EventsListResolver } from './app/events/shared/events-list-resolver.service';
 
 export const appRoutes: Routes = [
   {
@@ -11,7 +12,11 @@ export const appRoutes: Routes = [
     component: CreateEventComponent,
     canDeactivate: ['canDeactivateCreateEvent'],
   },
-  { path: 'events', component: EventsListComponent },
+  {
+    path: 'events',
+    component: EventsListComponent,
+    resolve: { events: EventsListResolver },
+  },
   {
     path: 'events/:id',
     component: EventDetailsComponent,
