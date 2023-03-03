@@ -7,7 +7,15 @@ import { IEvent } from '../shared';
   styleUrls: ['./event-thumbnail.component.css'],
 })
 export class EventThumbnailComponent {
-  @Input() event: IEvent | undefined;
+  @Input() event: IEvent = {
+    id: 0,
+    name: '',
+    date: new Date(),
+    time: '',
+    price: 0,
+    imageUrl: '',
+    sessions: [],
+  };
 
   getStartTimeStyle(): any {
     if (this.event && this.event.time === '8:00 am')
