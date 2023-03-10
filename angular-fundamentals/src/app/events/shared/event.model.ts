@@ -1,4 +1,4 @@
-export interface IEvent{
+export interface IEvent {
   id:number;
   name:string;
   date:Date;
@@ -14,7 +14,7 @@ export interface IEvent{
   sessions: ISession[]
 }
 
-export interface ISession{
+export interface ISession {
   id:number,
   name:string,
   presenter:string,
