@@ -6,10 +6,10 @@ import { IEvent } from '../shared';
 
 @Component({
   selector: 'events-list',
-  templateUrl: 'events-list.component.html',
+  templateUrl: './events-list.component.html',
 })
 export class EventsListComponent implements OnInit {
-  events: IEvent[] | undefined;
+  event: IEvent[] = [];
 
   constructor(
     private eventService: EventService,
@@ -19,7 +19,7 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit() {
     this.eventService.getEvents().subscribe((events) => {
-      this.events = this.route.snapshot.data['events'];
+      this.event = this.route.snapshot.data['events'];
     });
   }
   handleThumbnailClick(eventName: string) {
