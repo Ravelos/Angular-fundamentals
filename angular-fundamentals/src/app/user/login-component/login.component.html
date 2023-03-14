@@ -16,7 +16,8 @@
     </div>
 
     <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false"><button [disabled]="loginForm.invalid"
-        type="submit" class="btn btn-primary">Login</button></span>
+        type="submit" class="btn btn-primary" (click)="login(loginForm.controls.userName)">Login</button></span>
+
     <button (click)="cancel()" type="button" class="btn btn-default">Cancel</button>
   </form>
 </div>
